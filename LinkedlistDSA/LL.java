@@ -6,11 +6,9 @@ public class LL {
     LL(){
         this.size=0;
     }
-
     class Node{
         String data;
         Node next;
-
 
         Node(String data){
             this.data=data;
