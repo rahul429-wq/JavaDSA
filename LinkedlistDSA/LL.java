@@ -89,39 +89,64 @@ public class LL {
         secondlast.next=null;
     }
 
-//    getsize
+    //    getsize
 
     public int getSize(){
         return  size;
     }
 
+
+    //reverse whole Linkedlist
+    public void reverseIterate(){
+
+        if(head==null || head.next==null){
+            return;
+        }
+        Node prevNode=head;
+        Node currNode=head.next;
+        while (currNode!=null){
+            Node nextNode=currNode.next;
+            currNode.next=prevNode;
+            //update
+            prevNode=currNode;
+            currNode=nextNode;
+        }
+        head.next=null;
+        head=prevNode;
+
+    }
+
+
+
+
+
+
     public static void main(String[] args) {
         LL l1=new LL();
-        l1.addFirst("4");
-        l1.addFirst("3");
-        l1.addFirst("2");
-        l1.addFirst("1");
+        l1.addLast("1");
+        l1.addLast("2");
+        l1.addLast("3");
+        l1.addLast("4");
         l1.printList();
-        System.out.println("size-> "+l1.getSize());
-
-//        l1.deleteFirst();
-        l1.deleteLast();
-
+        l1.reverseIterate();
         l1.printList();
-        System.out.println("size-> "+l1.getSize());
-
-
-        l1.deleteLast();
-        l1.printList();
-        System.out.println("size-> "+l1.getSize());
-
-        l1.deleteLast();
-        l1.printList();
-        System.out.println("size-> "+l1.getSize());
-
-        l1.deleteLast();
-        l1.printList();
-        System.out.println("size-> "+l1.getSize());
+//        l1.addFirst("4");
+//        l1.addFirst("3");
+//        l1.addFirst("2");
+//        l1.addFirst("1");
+//        l1.printList();
+//        System.out.println("size-> "+l1.getSize());
+//        l1.printList();
+//        System.out.println("size-> "+l1.getSize());
+//        l1.deleteLast();
+//        l1.printList();
+//        System.out.println("size-> "+l1.getSize());
+//        l1.deleteLast();
+//        l1.printList();
+//        System.out.println("size-> "+l1.getSize());
+//        l1.deleteLast();
+//        l1.printList();
+//        System.out.println("size-> "+l1.getSize());
 
 
 //        System.out.println("");
