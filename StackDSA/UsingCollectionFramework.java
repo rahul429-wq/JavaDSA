@@ -1,5 +1,7 @@
 package StackDSA;
 
+import org.jcp.xml.dsig.internal.dom.ApacheTransform;
+
 import java.util.Stack;
 
 public class UsingCollectionFramework {
@@ -15,7 +17,21 @@ public class UsingCollectionFramework {
 
     }
 
-    public static void printStack(Stack<Integer> s1){
+//    revrese stack
+
+    public static void reverseStack(Stack<Integer> s){
+        if(s.empty()){
+            return;
+        }
+
+        int top=s.pop();
+        reverseStack(s);
+        pushAtBottom(top,s);
+    }
+
+
+
+        public static void printStack(Stack<Integer> s1){
         while (!s1.isEmpty()){
             System.out.println(s1.peek());
             s1.pop();
@@ -28,11 +44,11 @@ public class UsingCollectionFramework {
         s1.push(20);
         s1.push(30);
         s1.push(40);
-        printStack(s1);
-        pushAtBottom(400,s1);
-        printStack(s1);
 
-
+//        pushAtBottom(400,s1);
+        reverseStack(s1);
+        printStack(s1);
+//        printStack(s1);
 
     }
 }
