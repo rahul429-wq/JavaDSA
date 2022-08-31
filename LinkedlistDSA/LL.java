@@ -115,12 +115,6 @@ public class LL {
         head=prevNode;
 
     }
-
-
-
-
-
-
     public static void main(String[] args) {
         LL l1=new LL();
         l1.addLast("1");
